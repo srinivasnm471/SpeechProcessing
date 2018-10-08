@@ -6,10 +6,10 @@
 - Thilak M
 - Varun S S
 
-### File Name : Main.py
+### File Name : *Main.py*
 The Execution of the Project starts from here. 
 
-### File Name : ReadWavFile
+### File Name : *ReadWavFile.py*
 To read a .wav file and return the discrete signal points. Uses wave package.
 
 ###### Method Name : `readFile(file_path)`
