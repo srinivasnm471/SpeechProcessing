@@ -12,7 +12,7 @@ The Execution of the Project starts from here.
 ### File Name : ReadWavFile
 To read a .wav file and return the discrete signal points. Uses wave package.
 
-###### Method Name : `ReadFile(file_path)`
+###### Method Name : `readFile(file_path)`
 ```
     file_path -> str
     file_type -> .wav
