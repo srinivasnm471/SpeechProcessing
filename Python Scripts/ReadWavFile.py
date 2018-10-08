@@ -8,19 +8,7 @@ import wave as wave
 import system as sys
 
 
-"""
-Documentation:
-    file_path -> str
-    file_type -> .wav
-    Audio_type -> Mono
-    file_open_type -> Read
-    
-    return -> signal
-    return_type -> list
-    
-    Exits if file doesnt Exist/ Not readable
-    
-"""
+
 #readFile Function
 def readFile(file_path):
     try:
