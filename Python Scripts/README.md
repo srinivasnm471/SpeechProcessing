@@ -1,18 +1,18 @@
 # Documentation for Python Scripts
 
-## Authors and Contributors
+### Authors and Contributors
 - Shashank Sharma
 - Srinivas N M
 - Thilak M
 - Varun S S
 
-## File Name : Main.py
+##### File Name : Main.py
 The Execution of the Project starts from here. 
 
-## File Name : ReadWavFile
-To read a .wav file and return the discrete signal points
+##### File Name : ReadWavFile
+To read a .wav file and return the discrete signal points. Uses wave package.
 
-### Method Name : ReadFile(list)
+###### Method Name : ReadFile(list)
 ```
     file_path -> str
     file_type -> .wav
@@ -22,7 +22,7 @@ To read a .wav file and return the discrete signal points
     return -> signal
     return_type -> list
     
-    Exits if file doesnt Exist/ Not readable
+    Exits if file doesnt Exist/Not readable
 ```
 
 

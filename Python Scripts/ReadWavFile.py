@@ -1,13 +1,6 @@
-"""
-Created on Mon Oct  8 11:15:56 2018
-@author: Shashank B Sharma
-"""
-
 import numpy as np
 import wave as wave
 import system as sys
-
-
 
 #readFile Function
 def readFile(file_path):
@@ -18,7 +11,7 @@ def readFile(file_path):
         signal = list(np.fromstring(signal, 'int'))
 
         if spf.getnchannels() == 2:
-            print('Cannot Plot Stereo Files')
+            print('Only Mono Files Allowed')
         
         return signal
     
