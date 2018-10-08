@@ -19,6 +19,7 @@ Documentation:
     return_type -> list
     
     Exits if file doesnt Exist/ Not readable
+    
 """
 #readFile Function
 def readFile(file_path):
