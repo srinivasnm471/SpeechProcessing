@@ -11,7 +11,7 @@ file_path = 'F:\\SpeechProcessing\\Modified Speech\\a.wav'
 signal,fft = read.readFile(file_path)
 
 #Plot Signal
-plot.signal(signal)
+plot.signalPlot(signal)
 
 #Find Spectrum
 fft_cmplx = spectrum.fft(signal)
