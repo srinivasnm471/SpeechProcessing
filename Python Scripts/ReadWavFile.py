@@ -1,9 +1,11 @@
+'''Reads a Mono Wav File and returns a list of Signal Amplitudes
+'''
 import numpy as np
 import wave as wave
 import system as sys
 
 #readFile Function
-def readFile(file_path):
+def readWAVFile(file_path):
     try:
         spf = wave.open(file_path,'r')
         signal = spf.readframes(-1)
