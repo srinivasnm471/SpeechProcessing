@@ -1,9 +1,10 @@
-'''Reads a Mono Wav File and returns a list of Signal Amplitudes
-'''
+#==============================================================================
+#Project Modules
+#==============================================================================
 import numpy as np
 import wave as wave
-import system as sys
-
+import sys
+#==============================================================================
 #readFile Function
 def readWAVFile(file_path):
     try:
@@ -14,7 +15,7 @@ def readWAVFile(file_path):
 
         if spf.getnchannels() == 2:
             print('Only Mono Files Allowed')
-        
+        spf.close()
         return signal
     
     except Exception as err:
