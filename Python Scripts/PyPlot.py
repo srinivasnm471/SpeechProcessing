@@ -17,6 +17,8 @@ def plotY(signal,stem = False,title='',xLabel='',yLabel=''):
         else:
             plotted = pyplot.stem(signal)
         
+        pyplot.ylim([min(signal),max(signal)])
+        pyplot.grid()
         pyplot.show()
         return plotted
     except:
