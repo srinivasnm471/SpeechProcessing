@@ -17,9 +17,9 @@ def spectrumDataFromAudacity(file_path,toplot=False):
     del keys[1]
     
     for x in file:
-        arr =  x.split('-')
+        arr =  x.split('\t')
         frequency.append(float(arr[0].strip()))
-        level.append(-float(arr[1].strip()))
+        level.append(float(arr[1].strip()))
     file.close()    
     
     data = dict()
