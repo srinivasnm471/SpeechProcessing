@@ -7,7 +7,6 @@ import scipy.signal as sg
 
 def plotY(signal,stem = False,title='',xLabel='',yLabel=''):
     try:
-        signal = list(signal)
         pyplot.figure()
         pyplot.title(title)
         pyplot.xlabel(xLabel)
