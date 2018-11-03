@@ -5,7 +5,7 @@ import scipy.io.wavfile as wave
 import sys
 #==============================================================================
 #readFile Function
-def readWAVFile(file_path):
+def readWAVFile(file_path=''):
     try:
         fs,signal = wave.read(file_path)
         return fs,signal

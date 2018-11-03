@@ -17,9 +17,9 @@ def spectrumDataFromAudacity(file_path,toplot=False):
     del keys[1]
     
     for x in file:
-        arr =  x.split('-')
+        arr =  x.split('\t')
         frequency.append(float(arr[0].strip()))
-        level.append(-float(arr[1].strip()))
+        level.append(float(arr[1].strip()))
     file.close()    
     
     data = dict()
@@ -27,10 +27,10 @@ def spectrumDataFromAudacity(file_path,toplot=False):
     data[keys[1]] = level
     
     if toplot:
-        plot.plotXY(frequency,level)
+        plot.plotSpectrum(level,frequency,True,'Spectrum','Frequency(log)','level(dB)')
     
     return data
 
 #__init__
 file_path = FSelect.selectFile()
-data = spectrumDataFromAudacity(file_path.name)
+data = spectrumDataFromAudacity(file_path.name,True)
