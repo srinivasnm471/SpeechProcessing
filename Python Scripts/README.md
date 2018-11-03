@@ -96,3 +96,13 @@ Return Info:
 	1. data = Dictionary of Lag(s) Frequency(Hz) and Level
 ````
 ----
+### File Name : *PyPitchDetection.py*
+To find the pitch of an audio file. Uses Pisarenko Harmonic Distribution to find the pitch of the file.Implementation errors may exist.
+*Method Details will be added soon*
+
+---
+### File Name : *PyPlot.py*
+All Plotting methods are written here
+*Method Details will be added soon*
+
+---
