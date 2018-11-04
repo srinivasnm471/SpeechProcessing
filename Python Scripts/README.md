@@ -1,4 +1,5 @@
 
+
 # Documentation for Python Scripts
 
 ## Authors and Contributors
@@ -95,14 +96,71 @@ Return:
 Return Info:
 	1. data = Dictionary of Lag(s) Frequency(Hz) and Level
 ````
-----
-### File Name : *PyPitchDetection.py*
-To find the pitch of an audio file. Uses Pisarenko Harmonic Distribution to find the pitch of the file.Implementation errors may exist.
-*Method Details will be added soon*
-
 ---
 ### File Name : *PyPlot.py*
 All Plotting methods are written here
-*Method Details will be added soon*
-
+##### 1. Method Name : `plotY(signal,stem=False,title='',xLabel='',yLabel='')`
+````
+Description:
+	Plots range(1,len(signal)) vs signal and returns the plot object
+Throws:
+	1. List/Array Error
+Args:
+	1. signal (Type=numpy array/list)
+	2. stem=False (Type=Boolean)
+	3. title='' (Type=str)
+	4. xLabel=''(Type=str)
+	5. yLabel='' (Type=str)
+Return: 
+	Matpotlib.PyPlot.plot() object 
+Return Info:
+	1. The plot object
+````
+##### 2. Method Name : `plotXY(x=[],y=[],stem=False,title='',xLabel='',yLabel='')`
+````
+Description:
+	Plots x vs y and returns the plot object. x and y must be of the same length
+Throws:
+	1. List/Array Error
+Args:
+	1. x,y (Type=numpy array/list)
+	2. stem=False (Type=Boolean)
+	3. title='' (Type=str)
+	4. xLabel=''(Type=str)
+	5. yLabel='' (Type=str)
+Return: 
+	Matpotlib.PyPlot.plot() object 
+Return Info:
+	1. The plot object of X vs Y plot
+````
+##### 3. Method Name : `plotSpectrum(y,frequency,log=False,title='',xLabel='',yLabel='')`
+````
+Description:
+	Plots the spectrum data of frequency vs y. x and y must be of same length
+	if log=True:
+		frequency is plotted in logarithmic scale
+Throws:
+	1. List/Array Error
+Args:
+	1. y,frequency (Type=numpy array/list)
+	2. log=False (Type=Boolean)
+	3. title='' (Type=str)
+	4. xLabel=''(Type=str)
+	5. yLabel='' (Type=str)
+Return: 
+	Matpotlib.PyPlot.plot() object 
+Return Info:
+	1. The plot object of X vs Y plot
+````
+##### 3. Method Name : `plotSpectrogram(signal,fs)`
+Implementation errors may exist
+````
+Description:
+	Plots the spectrogram of a discrete signal sampled at fs
+Throws:
+	1. List/Array Error
+Args:
+	1. signal (Type=numpy array/list)
+	2. fs (Type=int)
+````
 ---
