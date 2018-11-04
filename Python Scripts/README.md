@@ -7,7 +7,18 @@
 - Srinivas N M
 - Thilak M
 - Varun S S
+
+## Recommended Installation of packages
+1. numpy
+2. scipy
+3. python_speech_features
+4. gTTS
+5. tkinter
+6. matpotlib
+7. speech_recognition
+8. playsound
 ----
+## Code Documentation
 ### File Name : *Main.py*
 The Execution of the Project starts from here. 
 
