@@ -1,12 +1,17 @@
 #==============================================================================
-#Project Modules
+import PySelectF as Folder
 #==============================================================================
+import playsound
 from gtts import gTTS
-#Requires urllib3 --> pip install urllib3
+#Requires a stable Network Connection
 #==============================================================================
 
-def textToSpeech(text,fileName):
-    tts = gTTS(text)
-    tts.save(fileName)
+def textToSpeech(text,fileName='SavedFile',dest_path=''):
+    tts = gTTS(text,lang='hi')
+    file = dest_path+fileName+'.mp3'
+    tts.save(file)
+    playsound.playsound(file)
     
-textToSpeech('ondu','train.mp3')
+text = 'kaa'
+dest_path = Folder.selectFolder()
+textToSpeech(text,text,dest_path+'/')
