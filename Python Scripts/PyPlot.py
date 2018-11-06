@@ -98,7 +98,7 @@ def plotSpectrogram(signal,fs,ret:bool=False,subPlot:int=None):
     if ret:
         return frequencies,times,spectrogram
     
-def plotFeatures(feature,title:str='',subPlot:int=None):
+def plotFeatures(feature,fs=22050,title:str='',subPlot:int=None,):
     if subPlot==None:
         pyplot.figure()
     else:
@@ -106,7 +106,7 @@ def plotFeatures(feature,title:str='',subPlot:int=None):
             pyplot.figure()
         pyplot.subplot(subPlot)
     
-    disp.specshow(feature,x_axis='time')
+    disp.specshow(feature,sr=float(fs),x_axis='time')
     pyplot.colorbar()
     pyplot.title(title)
     pyplot.tight_layout()
