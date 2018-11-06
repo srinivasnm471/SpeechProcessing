@@ -3,27 +3,27 @@ import PyPlot as Plot
 import PyWavRead as WavRead
 import PySelectF as FileSelect
 #==============================================================================
-from python_speech_features import mfcc
-from python_speech_features import delta
-from python_speech_features import logfbank
+import numpy as np
+import librosa
 #==============================================================================
 
 #__init__
 
 file_path = FileSelect.selectFile()
 fs,signal = WavRead.readWAVFile(file_path.name)
-mfcc_feat = mfcc(signal,fs,nfft=2048)
 
-Plot.plotSpectrogram(signal,fs)
-Plot.plotY(signal/max(signal))
+#Signal Plot
+Plot.plotY(signal/max(signal),title='Wavefrom',subPlot=211)
+Plot.plotSpectrogram(signal,fs,subPlot=212)
 
-d_mfcc_feat = delta(mfcc_feat, 2)
-d_mfcc_feat_2=delta(d_mfcc_feat,2)
+#Feature Extraction
+mfcc = librosa.feature.mfcc(np.float64(signal),np.float64(fs),n_mfcc=13,htk=True)
+delta_feat= librosa.feature.delta(mfcc)
+delta2_feat = librosa.feature.delta(mfcc,order=2)
+pitch_tracking = librosa.core.piptrack(np.float64(signal),float(fs),fmin=50,fmax=500)
 
-Plot.plotY(mfcc_feat)
-Plot.plotY(d_mfcc_feat)
-Plot.plotY(d_mfcc_feat_2)
+#Feature Plotting
+Plot.plotFeatures(mfcc,'MFCC',311)
+Plot.plotFeatures(delta_feat,'Delta',312)
+Plot.plotFeatures(delta2_feat,'DeltaDelta',313)
 
-fbank_feat = logfbank(signal,fs,nfft=2048)
-
-print(fbank_feat[1:3,:])

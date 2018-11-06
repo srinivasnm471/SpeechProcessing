@@ -1,5 +1,3 @@
-
-
 # Documentation for Python Scripts
 
 ## Authors and Contributors
@@ -11,7 +9,7 @@
 ## Recommended Installation of packages
 1. numpy
 2. scipy
-3. python_speech_features
+3. librosa
 4. gTTS
 5. tkinter
 6. matpotlib
@@ -32,10 +30,6 @@ Py Modules Imported
 ````
 ##### 1. Method Name : `readWAVFile(file_path='')`
 ````
-Throws:
-	1. File not found Error 
-	2. File not readable
-	3. Module Not Found
 Args:
 	1. file_path = '' (Type = str)  
 Return: 
@@ -53,10 +47,6 @@ Py Modules Imported
 ````
 ##### 1. Method Name : `selectFolder()`
 ````
-Throws:
-	1. Module Not Found
-Args:
-	 
 Return: 
 	folder_path
 Return Info:
@@ -64,10 +54,6 @@ Return Info:
 ````
 ##### 2. Method Name : `selectFile()`
 ````
-Throws:
-	1. Module Not Found
-Args:
-	 
 Return: 
 	file_path.name
 Return Info:
@@ -80,10 +66,6 @@ Automatically Parses audacity data to Python dictionary
 [Sample Cepstrum Data From Audacity](https://github.com/shashankrnr32/SpeechProcessing/blob/master/Data%20Samples/DataPoints/A35MaleCep.txt)
 ##### 1. Method Name : `spectrumDataFromAudacity(file_path,plot=False)`
 ````
-Throws:
-	1. Module Not Found
-	2. File Not Readable Error
-	3. File Not found Error
 Args:
 	1. file_path (Type=str)
 	2. plot=False (Type=Boolean)
@@ -93,15 +75,11 @@ Return Info:
 	1. data = Dictionary of Frequency(Hz) and Level(dB)
 ````
 ##### 2. Method Name : `cepstrumDataFromAudacity(file_path,plot=False)`
-- Will be added soon
+- ***Will be added soon***
 ````
-Throws:
-	1. Module Not Found
-	2. File Not Readable Error
-	3. File Not found Error
 Args:
 	1. file_path (Type=str)
-	2. plot=False (Type=Boolean)
+	2. plot=False (Type=bool)
 Return: 
 	data
 Return Info:
@@ -110,68 +88,76 @@ Return Info:
 ---
 ### File Name : *PyPlot.py*
 All Plotting methods are written here
-##### 1. Method Name : `plotY(signal,stem=False,title='',xLabel='',yLabel='')`
+````
+Py Modules Imported
+	1. matpotlib
+	2. scipy
+	3. librosa
+````
+##### 1. Method Name : `plotY(signal,stem=False,title='',xLabel='',yLabel='',subPlot=None)`
 ````
 Description:
 	Plots range(1,len(signal)) vs signal and returns the plot object
-Throws:
-	1. List/Array Error
 Args:
 	1. signal (Type=numpy array/list)
-	2. stem=False (Type=Boolean)
+	2. stem=False (Type=bool)
 	3. title='' (Type=str)
 	4. xLabel=''(Type=str)
 	5. yLabel='' (Type=str)
+	6. subPlot=None (Type=int)
 Return: 
 	Matpotlib.PyPlot.plot() object 
-Return Info:
-	1. The plot object
 ````
-##### 2. Method Name : `plotXY(x=[],y=[],stem=False,title='',xLabel='',yLabel='')`
+##### 2. Method Name : `plotXY(x=[],y=[],stem=False,title='',xLabel='',yLabel='',subPlot=None)`
 ````
 Description:
 	Plots x vs y and returns the plot object. x and y must be of the same length
-Throws:
-	1. List/Array Error
 Args:
 	1. x,y (Type=numpy array/list)
-	2. stem=False (Type=Boolean)
+	2. stem=False (Type=bool)
 	3. title='' (Type=str)
 	4. xLabel=''(Type=str)
 	5. yLabel='' (Type=str)
+	6. subPlot=None (Type=int)
 Return: 
-	Matpotlib.PyPlot.plot() object 
-Return Info:
-	1. The plot object of X vs Y plot
+	Matpotlib.PyPlot object 
 ````
-##### 3. Method Name : `plotSpectrum(y,frequency,log=False,title='',xLabel='',yLabel='')`
+##### 3. Method Name : `plotSpectrum(y,frequency,log=False,title='',xLabel='',yLabel='',subPlot=None)`
 ````
 Description:
 	Plots the spectrum data of frequency vs y. x and y must be of same length
-	if log=True:
+	if log==True:
 		frequency is plotted in logarithmic scale
-Throws:
-	1. List/Array Error
 Args:
 	1. y,frequency (Type=numpy array/list)
-	2. log=False (Type=Boolean)
+	2. log=False (Type=bool)
 	3. title='' (Type=str)
 	4. xLabel=''(Type=str)
 	5. yLabel='' (Type=str)
+	6. subPlot=None (Type=int)
 Return: 
-	Matpotlib.PyPlot.plot() object 
-Return Info:
-	1. The plot object of X vs Y plot
+	Matpotlib.PyPlot object 
 ````
-##### 3. Method Name : `plotSpectrogram(signal,fs)`
-Implementation errors may exist
+##### 3. Method Name : `plotSpectrogram(signal,fs,ret='False',subPlot=None)`
 ````
 Description:
 	Plots the spectrogram of a discrete signal sampled at fs
-Throws:
-	1. List/Array Error
+	Hamming Window: Length = 2048 ,No of Points = 2000
 Args:
 	1. signal (Type=numpy array/list)
 	2. fs (Type=int)
+	3. ret (Type=bool)
+	4. subPlot (Type=int)
+Return:
+	frequency,times,spectrogram (if ret == True)
+````
+##### 3. Method Name : `plotFeatures(feature,title='',subPlot=None)`
+````
+Description:
+	Plots the colormap plot of Feature vectors
+Args:
+	1. feature (Type=np.array)
+	2. title='' (Type=str)
+	3. subPlot=None (Type=int)
 ````
 ---
