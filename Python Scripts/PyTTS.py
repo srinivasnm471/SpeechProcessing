@@ -12,6 +12,6 @@ def textToSpeech(text,fileName='SavedFile',dest_path=''):
     tts.save(file)
     playsound.playsound(file)
     
-text = 'h'
+text = 'achaar'
 dest_path = Folder.selectFolder()
 textToSpeech(text,text,dest_path+'/')

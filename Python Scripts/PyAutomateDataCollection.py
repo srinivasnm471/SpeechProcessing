@@ -34,3 +34,6 @@ def spectrumDataFromAudacity(file_path,toplot=False):
 #__init__
 file_path = FSelect.selectFile()
 data = spectrumDataFromAudacity(file_path.name,True)
+
+file_path = FSelect.selectFile()
+data2 = spectrumDataFromAudacity(file_path.name,True)
